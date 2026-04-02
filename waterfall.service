@@ -1,0 +1,15 @@
+[Unit]
+Description=Waterfall Photo Gallery
+After=network.target
+
+[Service]
+Type=simple
+User=heathen-admin
+WorkingDirectory=/media/heathen-admin/RAID/Development/Projects/portfolio/portfolio-photos
+ExecStart=/usr/bin/node server.js
+Restart=on-failure
+RestartSec=5
+Environment=NODE_ENV=production
+
+[Install]
+WantedBy=multi-user.target
